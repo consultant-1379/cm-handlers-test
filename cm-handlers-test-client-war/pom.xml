@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ericsson.nms.mediation</groupId>
+		<artifactId>cm-handlers-test</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>cm-handlers-test-client-war</artifactId>
+	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.parent.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-jar</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.sdk</groupId>
+			<artifactId>sdk-services-core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ericsson.oss.itpf.common.flow</groupId>
+			<artifactId>eventflow-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warName>HandlerTestClient</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webappDirectory>target/${project.parent.artifactId}-${project.version}</webappDirectory>
+					<resource>
+						<directory>${basedir}/src/main/webapp/WEB-INF</directory>
+						<filtering>true</filtering>
+						<targetPath>WEB-INF</targetPath>
+						<includes>
+							<include>*.xml</include>
+						</includes>
+					</resource>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

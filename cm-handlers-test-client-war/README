@@ -1,0 +1,7 @@
+This war file is used as a manual test for the cm-handlers..
+
+------------------------------------------------------------------
+MociHandler
+
+<jboss.bind.address>/MediationTestClient/handler/invoke/MociHandler/<netsim ip>
+

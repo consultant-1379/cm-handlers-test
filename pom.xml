@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!--Please Use the latest version of integration pom.xml or the one you 
+		want to reference to -->
+	<parent>
+		<groupId>com.ericsson.nms</groupId>
+		<artifactId>integration</artifactId>
+		<version>15.2.0.20</version>
+	</parent>
+	<groupId>com.ericsson.nms.mediation</groupId>
+	<artifactId>cm-handlers-test</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>[${project.artifactId}] JEE6 Project</name>
+
+	<properties>
+		<version.arquillian.bom>1.0.4.Final</version.arquillian.bom>
+		<version.jboss.as.arquillian>7.2.0.Final</version.jboss.as.arquillian>
+		<version.jboss.as>6.1.1</version.jboss.as>
+		<version.jboss.javaee.6>3.0.2.Final</version.jboss.javaee.6>
+		<version.ServiceFrameworkBundle>1.0.62</version.ServiceFrameworkBundle>
+		<version.mediation.sdk>1.9.10</version.mediation.sdk>
+		<version.dps>1.0.249</version.dps>
+		<version.camel.engine.modules>3.0.3</version.camel.engine.modules>
+		<version.ci.association.module>1.0.9</version.ci.association.module>
+		<version.eai.creation.module>1.0.8</version.eai.creation.module>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- arquillian BOM -->
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>${version.arquillian.bom}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- Jboss dependencies -->
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-6.0</artifactId>
+				<version>${version.jboss.javaee.6}</version>
+				<type>pom</type>
+				<scope>provided</scope>
+			</dependency>
+			<!-- Mediation SDK -->
+			<dependency>
+				<groupId>com.ericsson.nms.mediation</groupId>
+				<artifactId>mediation-sdk-bom</artifactId>
+				<version>${version.mediation.sdk}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- DPS BOM -->
+			<dependency>
+				<groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+				<artifactId>data-persistence-service-bom</artifactId>
+				<version>${version.dps}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>cm-handlers-test-jar</module>
+		<module>cm-handlers-test-client-war</module>
+	</modules>
+
+</project>

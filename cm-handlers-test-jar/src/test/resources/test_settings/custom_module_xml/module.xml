@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="com.ericsson.oss.mediation.engine.contrib">
+	<resources>
+	</resources>
+
+	<dependencies>
+		<module name="org.apache.camel" export="true" />
+		<module
+			name="com.ericsson.nms.mediation.component.flow.handler.eaicreation"
+			slot="${version.eai.creation.module}" export="true" services="export">
+		</module>
+		<module
+			name="com.ericsson.nms.mediation.component.flow.handler.ciassociation"
+			slot="${version.ci.association.module}" export="true" services="export">
+		</module>
+		<module name="org.slf4j" />
+	</dependencies>
+</module>

@@ -1,0 +1,8 @@
+<jboss-deployment-structure>
+	<deployment>
+		<dependencies>
+			<module name="com.ericsson.oss.mediation.engine.contrib"
+				export="true" />
+		</dependencies>
+	</deployment>
+</jboss-deployment-structure>
